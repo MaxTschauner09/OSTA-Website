@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutz — OSTA KI-Services</title>
-<meta name="description" content="Datenschutzerklärung der OSTA KI-Services GbR: welche Daten wir verarbeiten und wie wir sie schützen.">
+<title>Login — OSTA KI-Services</title>
+<meta name="description" content="Melden Sie sich bei Ihrem OSTA-Konto an, um Ihre Abonnements zu verwalten.">
 <link rel="icon" type="image/png" href="assets/images/favicon-256.png">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -146,7 +146,7 @@
       <a href="produkte.html">Produkte</a>
       <a href="vorteile.html">Vorteile</a>
       <a href="kontakt.html">Kontakt</a>
-      <a href="login.html">Login</a>
+      <a href="login.html" aria-current="page">Login</a>
     </nav>
     <div class="header-actions">
       <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">
@@ -161,48 +161,34 @@
     <a href="produkte.html">Produkte</a>
     <a href="vorteile.html">Vorteile</a>
     <a href="kontakt.html">Kontakt</a>
-      <a href="login.html">Login</a>
+    <a href="login.html" aria-current="page">Login</a>
   </div>
 </div>
 
 <main>
   <section>
     <div class="container">
-      <a href="index.html" class="back-link">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        Zurück zur Startseite
-      </a>
-
       <div class="section-head">
-        <h2>Datenschutzerklärung</h2>
+        <h2>Willkommen zurück</h2>
+        <p>Melden Sie sich an, um Ihre Abonnements zu verwalten.</p>
       </div>
 
-      <div class="legal-content">
-        <h2>1. Verantwortliche Stelle</h2>
-        <p>OSTA KI-Services GbR<br>
-        Maximilian Tschauner, Konrad-Adenauer-Straße 7, 53562 Sankt Katharinen<br>
-        Ole Hein Schmidt, Amselweg 4, 56593 Güllesheim<br>
-        E-Mail: <a href="mailto:osta.kiservices@outlook.com">osta.kiservices@outlook.com</a></p>
+      <form class="auth-shell" id="login-form" novalidate>
+        <div class="auth-error" id="login-error"></div>
 
-        <h2>2. Hosting und Zugriffsdaten</h2>
-        <p>Diese Website ist eine rein statische Seite ohne eigenes Server-Backend. Beim Aufruf der Seite verarbeitet der Hosting-Anbieter aus technischen Gründen automatisch Zugriffsdaten (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser), die in Server-Logfiles gespeichert werden können. Diese Verarbeitung ist zur technischen Bereitstellung der Website erforderlich (Art. 6 Abs. 1 lit. f DSGVO).</p>
+        <div class="form-field">
+          <label for="email">E-Mail-Adresse</label>
+          <input type="email" id="email" name="email" placeholder="ihre@email.de" required autocomplete="email">
+        </div>
 
-        <h2>3. Keine Cookies, kein Tracking</h2>
-        <p>Wir setzen auf dieser Website keine Cookies, keine Analyse- oder Trackingdienste und keine Werbenetzwerke ein.</p>
+        <div class="form-field">
+          <label for="password">Passwort</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+        </div>
 
-        <h2>4. Schriftarten</h2>
-        <p>Wir verwenden auf dieser Website die Schriftarten „Space Grotesk" und „DM Sans". Beide Schriftarten sind lokal auf unserem Server eingebunden. Es findet keine Verbindung zu Servern von Google oder anderen Drittanbietern statt, es werden dabei keine Daten an Dritte übertragen.</p>
-
-        <h2>5. Kontaktaufnahme per E-Mail oder Kontaktformular</h2>
-        <p>Wenn Sie uns per E-Mail oder über unser Kontaktformular kontaktieren, werden Ihre Angaben (z. B. E-Mail-Adresse, Name, Nachrichteninhalt) zum Zweck der Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Anfrage) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage). Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-        <p>Unser Kontaktformular wird technisch über den Dienst <strong>FormSubmit</strong> (Formester Ltd.) abgewickelt, der Ihre Formulareingaben entgegennimmt und als E-Mail an uns weiterleitet, ohne sie dauerhaft zu speichern. Dabei kann Ihre IP-Adresse zur Spam-Abwehr kurzzeitig verarbeitet werden. Weitere Informationen: <a href="https://formsubmit.co/privacy-policy" target="_blank" rel="noopener">formsubmit.co/privacy-policy</a>.</p>
-
-        <h2>6. Ihre Rechte</h2>
-        <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer bei uns gespeicherten personenbezogenen Daten sowie ein Recht auf Datenübertragbarkeit und Widerspruch. Wenden Sie sich dazu einfach an die oben genannte Kontakt-E-Mail-Adresse. Ihnen steht zudem ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde zu.</p>
-
-        <h2>7. Änderung dieser Datenschutzerklärung</h2>
-        <p>Wir passen diese Datenschutzerklärung an, sobald sich unser Angebot oder die rechtlichen Vorgaben ändern. Die jeweils aktuelle Fassung finden Sie stets an dieser Stelle.</p>
-      </div>
+        <button type="submit" class="btn btn-primary btn-block" id="login-submit">Anmelden</button>
+        <p class="auth-switch">Noch kein Konto? <a href="registrieren.html">Jetzt registrieren</a></p>
+      </form>
     </div>
   </section>
 </main>
@@ -216,18 +202,48 @@
     <nav class="footer-links" aria-label="Rechtliches">
       <a href="impressum.html">Impressum</a>
       <a href="agb.html">AGB</a>
-      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </nav>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="assets/js/supabase-client.js"></script>
+<script src="assets/js/auth-guard.js"></script>
+<script>
+  window.osta.redirectIfLoggedIn("dashboard.html");
+
+  var form = document.getElementById("login-form");
+  var errorBox = document.getElementById("login-error");
+  var submitBtn = document.getElementById("login-submit");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    errorBox.classList.remove("is-visible");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Anmelden …";
+
+    var email = document.getElementById("email").value.trim();
+    var password = document.getElementById("password").value;
+
+    var { error } = await window.osta.supabase.auth.signInWithPassword({ email: email, password: password });
+
+    if (error) {
+      errorBox.textContent = "Anmeldung fehlgeschlagen: E-Mail oder Passwort ist falsch, oder die E-Mail-Adresse wurde noch nicht bestätigt.";
+      errorBox.classList.add("is-visible");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Anmelden";
+      return;
+    }
+
+    window.location.href = "dashboard.html";
+  });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/animations.js"></script>
 <script src="assets/js/background-fx.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<script src="assets/js/supabase-client.js"></script>
 <script src="assets/js/analytics.js"></script>
 </body>
 </html>
