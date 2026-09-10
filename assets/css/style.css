@@ -1432,6 +1432,94 @@ body.has-success .contact-success {
   font-size: 0.85rem;
 }
 
+/* ---------------- Header account menu (logged-in state) ---------------- */
+
+.nav-account {
+  position: relative;
+}
+
+.account-toggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  transition: color 0.18s ease;
+}
+
+.account-toggle:hover {
+  color: var(--text);
+}
+
+.account-toggle svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.18s ease;
+}
+
+.nav-account.is-open .account-toggle svg {
+  transform: rotate(180deg);
+}
+
+.account-menu-panel {
+  position: absolute;
+  top: calc(100% + 0.9rem);
+  right: 0;
+  min-width: 11rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-m);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.65);
+  padding: 0.4rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.15rem;
+  z-index: 50;
+}
+
+.nav-account.is-open .account-menu-panel {
+  display: flex;
+}
+
+.account-menu-panel a,
+.account-menu-panel button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-s);
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.account-menu-panel a:hover,
+.account-menu-panel button:hover {
+  background: var(--bg-elevated-2);
+}
+
+.mobile-nav-account a {
+  padding: 0.75rem 0;
+  text-decoration: none;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+  display: block;
+}
+
+.mobile-nav-account a:last-child {
+  border-bottom: none;
+}
+
 /* ---------------- Auth forms (login/register) ---------------- */
 
 .auth-shell {
