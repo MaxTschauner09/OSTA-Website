@@ -41,9 +41,5 @@ window.osta.redirectIfLoggedIn = async function (target) {
   }
 };
 
-window.osta.logout = async function () {
-  var db = window.osta.supabase;
-  if (!db) return;
-  await db.auth.signOut();
-  window.location.href = "index.html";
-};
+// window.osta.logout lives in supabase-client.js, since it needs to be
+// available on every page, not just the ones that load this file.
