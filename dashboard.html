@@ -177,7 +177,10 @@
           <h2>Meine Abonnements</h2>
           <p class="dash-email" id="dash-email"></p>
         </div>
-        <button class="btn btn-ghost" id="logout-btn">Abmelden</button>
+        <div style="display: flex; gap: 0.6rem;">
+          <a href="admin-dashboard.html" class="btn btn-ghost" id="admin-link" hidden>Admin-Dashboard</a>
+          <button class="btn btn-ghost" id="logout-btn">Abmelden</button>
+        </div>
       </div>
 
       <div class="sub-list" id="sub-list"></div>
@@ -216,6 +219,15 @@
     document.getElementById("logout-btn").addEventListener("click", function () {
       window.osta.logout();
     });
+
+    var { data: profile } = await window.osta.supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", session.user.id)
+      .single();
+    if (profile && profile.role === "admin") {
+      document.getElementById("admin-link").hidden = false;
+    }
 
     var statusLabels = {
       active: "Aktiv",
