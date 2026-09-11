@@ -232,13 +232,20 @@
     var email = document.getElementById("email").value.trim();
     var password = document.getElementById("password").value;
 
-    var { error } = await window.osta.supabase.auth.signUp({ email: email, password: password });
+    var { data, error } = await window.osta.supabase.auth.signUp({ email: email, password: password });
 
     if (error) {
       errorBox.textContent = "Registrierung fehlgeschlagen: " + (error.message || "Bitte versuchen Sie es erneut.");
       errorBox.classList.add("is-visible");
       submitBtn.disabled = false;
       submitBtn.textContent = "Registrieren";
+      return;
+    }
+
+    if (data && data.session) {
+      // Email confirmation is disabled, so signUp already returned a live
+      // session — no need to show a "check your inbox" message at all.
+      window.location.href = "dashboard.html";
       return;
     }
 
